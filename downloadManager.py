@@ -38,11 +38,7 @@ def signal_handler(sig, frame):
 
 
 def progress(count, total, directory, filename, suffix=''):
-    global tx_prev, rx_prev, tx_speed, rx_speed, last_speed_time, line_length
-    # tx = get_bytes('tx')
-    # tx_speed = tx - tx_prev
-    # print('TX: ', tx_speed, 'bps')
-    # tx_prev = tx
+    global rx_prev, rx_speed, last_speed_time, line_length
 
     if time.time() - last_speed_time > 1:
         rx = os.path.getsize(os.path.join(directory, filename))
